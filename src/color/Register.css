@@ -1,0 +1,21 @@
+.container {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; */
+    background-color: #2F4F4F;
+    display: flex;
+    justify-content: center;
+    height: 720px;
+}
+
+.card {
+    color: blueviolet;
+    height: 400px;
+    width: 600px;
+    justify-content: center;
+}
+
+.input-form {
+
+}
