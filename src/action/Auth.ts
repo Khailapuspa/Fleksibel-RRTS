@@ -1,30 +1,61 @@
+// Auth.ts
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const BASE_URL = "http://[::1]:3000"
 
-interface initialParamsType{
-    name : string,
-    age : number,
-    email : string
-    password: string
+interface InitialParamsType {
+  name: string;
+  age: number;
+  email: string;
+  password: string;
 }
 
-export const userjuAsync = createAsyncThunk( 'post/register/user', async ({ name, age, email, password }: initialParamsType, thunkAPI) => {
-    try {
-      const response = await fetch(`${BASE_URL}/register/user`, {
-        method: 'POST',
-        body: JSON.stringify({ name, age, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+export const userRegisAsync = createAsyncThunk('/register/user', async (user: InitialParamsType) => {
+  const response = await fetch(`${process.env.REACT_APP_PUBLIC_URL}/register/user`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user),
+  });
 
-      // Assuming response.json() returns the expected data structure
-      const data = await response.json();
+  const data = await response.json();
+  return data; // Assuming data has the structure of InitialParamsType
+});
 
-      // The value we return becomes the `fulfilled` action payload
-      return data;
-    } catch (error) {
-      // You can handle errors here
-      return thunkAPI.rejectWithValue(error);
-    }
-  }
-);
+// export const userRegisAsync = createAsyncThunk('/register/user', async (user: InitialParamsType) => {
+//   const apiUrl = `${process.env.REACT_APP_PUBLIC_URL}/register/user`;
+//   console.log('API URL:', apiUrl); // Log URL ke konsol
+
+//   const response = await fetch(apiUrl, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(user),
+//   });
+
+//   // ... (lanjutkan dengan log atau pemrosesan data lainnya)
+// });
+
+
+
+
+// export const userRegisAsync = createAsyncThunk('post/register/user', async ({ name, age, email, password }: InitialParamsType, thunkAPI) => {
+//   try {
+//     const response = await fetch(`${process.env.REACT_APP_PUBLIC_URL}/register/user`, {
+//       method: "POST",
+//       body: JSON.stringify({ name, age, email, password }),
+//       headers: { 'Content-Type': 'application/json' },
+//     });
+
+//     // Assuming response.json() returns the expected data structure
+//     const data = await response.json();
+
+//     // The value we return becomes the `fulfilled` action payload
+//     return data;
+//   } catch (error) {
+//     // You can handle errors here
+//     return thunkAPI.rejectWithValue(error);
+//   }
+// });
+

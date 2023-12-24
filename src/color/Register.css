@@ -1,21 +1,28 @@
+
+
 .container {
-    /* display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; */
-    background-color: #2F4F4F;
-    display: flex;
-    justify-content: center;
-    height: 720px;
+    height: 100vh;
+    margin: 0;
 }
 
 .card {
-    color: blueviolet;
-    height: 400px;
-    width: 600px;
-    justify-content: center;
+   background-color: #8ba2b4 !important; 
+   width: 400px; /* Sesuaikan lebar card sesuai kebutuhan */
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.input-form {
+.card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
+.button {
+    margin-top: 15px;
+    margin-left: 100px;
 }
