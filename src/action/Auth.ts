@@ -9,13 +9,13 @@ interface InitialParamsType {
   password: string;
 }
 
-export const userRegisAsync = createAsyncThunk('/register/user', async (user: InitialParamsType) => {
+export const userRegisAsync = createAsyncThunk('/register/user', async ({ name, age, email, password }: InitialParamsType) => {
   const response = await fetch(`${process.env.REACT_APP_PUBLIC_URL}/register/user`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(user),
+    body: JSON.stringify({ name, age, email, password }),
   });
 
   const data = await response.json();

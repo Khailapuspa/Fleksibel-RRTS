@@ -1,8 +1,23 @@
 import { InputNumber } from "primereact/inputnumber";
 import { InputText } from "primereact/inputtext";
+import { useState } from "react";
 import { Container, Card, Button } from "react-bootstrap";
+import { userRegisAsync } from "../action/Auth";
+import { useAppDispatch } from "../app/hooks";
+import { userLoginAsync } from "../action/AuthLog";
 
 const Login = () => {
+  const dispatch = useAppDispatch();
+    // const user = useAppSelector(selectUser);
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+
+  // const { name, age, email, password } = user;
+
+  const loginHandle = () => {
+    dispatch(userLoginAsync({ email, password }));
+  };
+  
     return (
         <Container fluid className="container">
       <Card>
@@ -13,16 +28,16 @@ const Login = () => {
               <span className="p-inputgroup-addon">
                     <i className="pi pi-envelope"></i>
                 </span>
-                <InputText placeholder="Email" />
+                <InputText type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div className="p-inputgroup flex-1">
               <span className="p-inputgroup-addon">
                     <i className="pi pi-lock"></i>
                 </span>
-                <InputText placeholder="Password" />
+                <InputText type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
         </div>
-        <Button className="button" variant="primary">Login Say</Button>
+        <Button className="button" variant="primary" onClick={loginHandle}>Login Say</Button>
       </Card.Body>
     </Card>
     </Container>

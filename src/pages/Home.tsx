@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom";
+import HeadBar from "../components/HeadBar";
+import { Image } from 'primereact/image';
+import '../App.css';
 
 const Home = () => {
   return (
     <>
-        <Link to="/register" className='btn btn-primary'> Register </Link>
+      
+      <HeadBar />
+        <div className="App-Img">
+          <Image src="/gambar1.jpg" width="1360" height="600" />
+        </div>
+            
     </>
   )
 }
