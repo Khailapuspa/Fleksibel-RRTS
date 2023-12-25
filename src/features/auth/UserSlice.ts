@@ -21,23 +21,24 @@ const userSlice = createSlice({
   name: 'user',
   initialState: initialState,
   reducers: {
-    
+
   },
-   extraReducers: (builder) => {
-        // builder.addCase(userRegisAsync.pending, (state) => {
-        //     state.loading = true;
-        // })
-        builder.addCase(userRegisAsync.fulfilled, (state, action) => {
-            state.name = action.payload.name;
-            state.age = action.payload.age;
-            state.email = action.payload.email;
-            state.password = action.payload.password;
-        });
-        // builder.addCase(userRegisAsync.rejected, (state, action) => {
-        //     state.loading = false;
-        //     state.error = action.error.message;
-        // })
-    },
+  extraReducers: (builder) => {
+    // builder.addCase(userRegisAsync.pending, (state) => {
+    //     state.loading = true;
+    // })
+    builder.addCase(userRegisAsync.fulfilled, (state, action) => {
+      const payload: UserState = action.payload
+      state.name = payload.name;
+      state.age = payload.age;
+      state.email = payload.email;
+      state.password = payload.password;
+    });
+    // builder.addCase(userRegisAsync.rejected, (state, action) => {
+    //     state.loading = false;
+    //     state.error = action.error.message;
+    // })
+  },
 });
 
 export const name = (state: RootState) => state.user.name;

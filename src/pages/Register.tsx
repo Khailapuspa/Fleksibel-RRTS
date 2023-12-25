@@ -5,7 +5,7 @@
   import { InputNumber } from 'primereact/inputnumber';
   import './../style/Register.css';
   import { userRegisAsync } from '../action/Auth';
-  import { age, email, name, password } from '../features/auth/userSlice';
+  import { age, email, name, password } from '../features/auth/UserSlice';
 
   const Register = () => {
     const dispatch = useAppDispatch();
