@@ -3,9 +3,10 @@
 }
 
 .App-Img {
-  display: flex;
+  position: fixed;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .custom-form{

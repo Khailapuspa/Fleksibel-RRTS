@@ -6,12 +6,10 @@ import '../App.css';
 const Home = () => {
   return (
     <>
-      
+      <div className="App-Img">
+        <Image src="/gambar1.jpg" width="100%" height="600" />
+      </div>
       <HeadBar />
-        <div className="App-Img">
-          <Image src="/gambar1.jpg" width="1360" height="600" />
-        </div>
-            
     </>
   )
 }

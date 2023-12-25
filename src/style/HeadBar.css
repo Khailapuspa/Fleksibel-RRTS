@@ -1,5 +1,7 @@
-.App-headbar {
-    background-color: #B0C4DE;
+.home-headbar {
+    position: absolute;
+    background-color: #006eff00;
+    z-index: 10;
 }
 
 .App-search {
