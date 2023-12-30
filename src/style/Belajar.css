@@ -1,0 +1,99 @@
+/* .main .main-heading {
+  font-size: 1px;
+}# sourceMappingURL=Belajar.css.map */
+
+.header-b {
+  background-color: #4682B4;
+  overflow: hidden;
+  display: flex;
+  padding: 16px;
+}
+
+.link-b {
+  color: white;
+  font-size: medium;
+}
+
+.conti {
+  display: flex;
+}
+
+.side-b {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  position: relative;
+  height: 100vh;
+  overflow: auto;
+  transition: width 0.5s ease;
+  background-color: peru;
+}
+
+.side-b.collapsed {
+  width: 5%;
+}
+
+.tent {
+  padding: 7px;
+  font-size: medium;
+  flex: 1;
+}
+
+.sidebar-s {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #434657;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  transition: width 0.5s ease;
+}
+
+.sidebar-s.collapsed {
+  width: 5%;
+}
+
+.toggle-icon {
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.text-content {
+  display: block;
+}
+
+.collapsed .text-content {
+  display: none;
+}
+
+.icon {
+  color: #ffffff;
+  margin-left: 8px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+li a {
+  display: block;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #000;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}

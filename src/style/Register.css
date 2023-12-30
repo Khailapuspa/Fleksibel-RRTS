@@ -1,6 +1,5 @@
 
-
-.container {
+.container-regis-login {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,8 +7,8 @@
     margin: 0;
 }
 
-.card {
-   background-color: #8ba2b4 !important; 
+.cardnih {
+   background-color: #dbe3e9 !important; 
    width: 400px; /* Sesuaikan lebar card sesuai kebutuhan */
    padding: 20px;
    border-radius: 10px;
@@ -23,6 +22,14 @@
   }
 
 .button {
-    margin-top: 15px;
-    margin-left: 100px;
+    margin-left: 120px;
+}
+
+.App-text {
+    margin-bottom: 10px;
+    margin-left: 90px;
+}
+
+.login-text {
+    font-size: small;
 }

@@ -1,0 +1,39 @@
+// body {
+//     background-color: lightblue;
+// }
+
+// .main {
+//     background-color: lightblue;
+
+//     .main-heading {
+//         font-size: 2em;
+//     }
+
+//     .main-paragraph {
+//         font-size: 1.4em;
+//     }
+// }
+
+// h1, p {
+//     letter-spacing: 1px;
+// }
+
+// .main, footer {
+//     h1, p{
+//         letter-spacing: 1px;
+//     }
+// }
+
+// .main {
+//     .main-heading {
+//         font-size: 1px;
+//     }
+// }
+
+.container {
+    display: flex;
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+}

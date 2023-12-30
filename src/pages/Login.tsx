@@ -19,8 +19,8 @@ const Login = () => {
   };
   
     return (
-        <Container fluid className="container">
-      <Card>
+        <Container className="container-regis-login">
+      <Card className="cardnih">
       <Card.Body>
         <Card.Title className="button">Sign In</Card.Title>
         <div className="card-form">
@@ -37,6 +37,7 @@ const Login = () => {
                 <InputText type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
         </div>
+        <p className="login-text"><a href="/register">Daftar</a></p>
         <Button className="button" variant="primary" onClick={loginHandle}>Login Say</Button>
       </Card.Body>
     </Card>

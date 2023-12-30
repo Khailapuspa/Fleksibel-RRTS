@@ -22,10 +22,10 @@
   };
 
     return (
-      <Container>
-        <Card>
+      <Container className="container-regis-login">
+        <Card className="cardnih">
           <Card.Body>
-            <Card.Title className="button">Sign Up</Card.Title>
+            <Card.Title className="App-text">Daftar Sekarang</Card.Title>
             <div className="card-form">
               <div className="p-inputgroup flex-1">
                 <span className="p-inputgroup-addon">
@@ -52,6 +52,7 @@
                 <InputText type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
               </div>
             </div>
+            <p className="login-text">Sudah punya akun Fleksibeli? <a href="/login">Masuk</a></p>
             <Button className="button" variant="primary" onClick={registerHandle}>Sign Up</Button>
           </Card.Body>
         </Card>

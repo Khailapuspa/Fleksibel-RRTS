@@ -1,0 +1,36 @@
+/* .ProdukIisi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    height: 70vh;
+    margin-left: 12%;
+    background-color: beige;
+} */
+
+.card-produk {
+    /* background-color: beige; */
+    width: 200px; /* Sesuaikan lebar card sesuai kebutuhan */
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    margin-left: 30px;
+    /* margin-top: 36px; */
+
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: whitesmoke;
+    position: relative;
+    flex: 1;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px (0, 0, 0, .3);
+    margin: 35px;
+    margin-left: 25%;
+}
