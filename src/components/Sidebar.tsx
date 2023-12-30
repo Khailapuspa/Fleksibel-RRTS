@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { FaAlignJustify, FaHome, FaTruck, FaTags } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './../style/Sidebar.css';
+import { useAppSelector } from '../app/hooks';
+import { show } from '../features/sidebar/SidebarSlice';
 
 const Sidebar = () => {
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const showValue = useAppSelector(show)
 
     const toggleSidebar = () => {
         setSidebarCollapsed(!sidebarCollapsed);
@@ -13,10 +16,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className={`sidebar-s ${sidebarCollapsed ? 'collapsed' : ''}`}>
-                <div className="toggle-icon" onClick={toggleSidebar}>
-                    <FaAlignJustify />
-                </div>
+            <div className={`sidebar-s ${showValue ? 'collapsed' : ''}`}>
                 <li>
                     {!sidebarCollapsed && <FaHome className="icon" />}
                     <Link to="/dashboard" className="text-content">Dashboard</Link>
