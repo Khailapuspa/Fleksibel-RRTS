@@ -29,4 +29,10 @@
   }
    */
   /* Add any other styling as needed */
+
+  /* .App-Navbar {
+    backgroundColor: "#393c4d";
+    marginLeft: sidebarOpen ? 250px : '0'; // Adjust the width as needed
+    transition: 'margin-left 0.5s ease', // Add a smooth transition effect
+  }; */
   

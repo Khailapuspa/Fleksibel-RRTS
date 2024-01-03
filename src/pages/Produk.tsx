@@ -3,11 +3,12 @@ import HeadBar from "../components/HeadBar";
 import Sidebar from "../components/Sidebar";
 import './../style/Produk.css';
 import './../style/Dashboard.css';
+import NavBar from "../components/Navbar";
 
 const Produk = () => {
     return (
         <>
-        <HeadBar />
+        <NavBar />
         <Sidebar />
             {/* <Card className="card-produk">
                 <p>PRODUK NANTI DISINI </p>

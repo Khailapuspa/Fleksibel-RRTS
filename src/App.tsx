@@ -13,6 +13,8 @@ import * as FaIcons from 'react-icons/fa' ;
 import Produk from './pages/Produk';
 import Orders from './pages/Orders';
 import Belajar from './pages/Belajar';
+import { DefaultContext } from 'react-icons';
+import DefaultLayout from './layout/DefaultLayout';
 
 
 
@@ -30,6 +32,7 @@ function App() {
           <Route path="/produk" element={<Produk />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/belajar" element={<Belajar />} />
+          <Route path="/default" element={<DefaultLayout />} />
         </Routes>
 	</BrowserRouter>  
     </Provider>

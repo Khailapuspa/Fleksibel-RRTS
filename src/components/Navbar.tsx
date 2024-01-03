@@ -1,5 +1,5 @@
 // NavBar.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import { Avatar } from 'primereact/avatar';
@@ -12,21 +12,29 @@ import { useAppDispatch, useAppSelector } from '../app/hooks';
 const NavBar = () => {
 
   const dispatch = useAppDispatch();
-  const showValue = useAppSelector(show)
+  const showValue = useAppSelector(show);
+  // const [sidebarOpen, setSidebarOpen] = useState<boolean>(true);
 
   const setSideBar = () => {
     const setsidebar = Boolean(!showValue)
-    dispatch(setShow(setsidebar))
+    dispatch(setShow(setsidebar));
+    // setSidebarOpen(!sidebarOpen);
   }
 
+  // const navbarStyle = {
+  //   backgroundColor: '#393c4d',
+  //   marginLeft: sidebarOpen ? '15%' : '0', // Adjust the width as needed
+  //   transition: 'margin-left 0.5s ease', // Add a smooth transition effect
+  // };
+
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect expand="lg" style={{backgroundColor: '#393c4d'}} >
       <Container fluid>
-        <Navbar.Brand href="/">Flexibeli</Navbar.Brand>
+        <Navbar.Brand href="/" style={{ color: 'white', fontSize: '20px', marginLeft: '50px' }}>Flexibeli</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Button icon="pi pi-bars" className="p-button-rounded p-button-text" onClick={() => setSideBar()}></Button>
+          <Nav className="me-auto" style={{marginLeft: '35px'}}>
+            <Button icon="pi pi-bars" className="p-button-rounded p-button-text" style={{color: 'white'}} onClick={() => setSideBar()}></Button>
           </Nav>
           <Nav>
             <InputText placeholder="Search" className="p-inputtext-sm" />

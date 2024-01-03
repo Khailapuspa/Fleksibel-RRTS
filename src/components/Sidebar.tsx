@@ -18,15 +18,15 @@ const Sidebar = () => {
         <>
             <div className={`sidebar-s ${showValue ? 'collapsed' : ''}`}>
                 <li>
-                    {!sidebarCollapsed && <FaHome className="icon" />}
+                    <FaHome className="icon" />
                     <Link to="/dashboard" className="text-content">Dashboard</Link>
                 </li>
                 <li>
-                    {!sidebarCollapsed && <FaTags className="icon" />}
+                    <FaTags className="icon" />
                     <Link to="/produk" className="text-content">Produk</Link>
                 </li>
                 <li>
-                    {!sidebarCollapsed && <FaTruck className="icon" />}
+                    <FaTruck className="icon" />
                     <Link to="/orders" className="text-content">Orders</Link>
                 </li>
             </div>

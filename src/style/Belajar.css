@@ -2,7 +2,7 @@
   font-size: 1px;
 }# sourceMappingURL=Belajar.css.map */
 
-.header-b {
+/* .header-b {
   background-color: #4682B4;
   overflow: hidden;
   display: flex;
@@ -23,7 +23,7 @@
   margin: 0;
   padding: 0;
   width: 15%;
-  position: relative;
+  position: fixed;
   height: 100vh;
   overflow: auto;
   transition: width 0.5s ease;
@@ -38,13 +38,13 @@
   padding: 7px;
   font-size: medium;
   flex: 1;
-}
+} */
 
 .sidebar-s {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 15%;
+  width: inherit;
   background-color: #434657;
   position: fixed;
   height: 100%;
@@ -53,7 +53,7 @@
 }
 
 .sidebar-s.collapsed {
-  width: 5%;
+  width: 0%;
 }
 
 .toggle-icon {
