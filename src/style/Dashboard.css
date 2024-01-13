@@ -23,20 +23,13 @@
   transition: width 0.5s ease;
 }
 
-/* .sidebar-closed .content-db {
-  margin-left: 0; Set margin-left to 0 when sidebar is closed
-}
-
-.sidebar-open .content-db {
-  margin-left: 212px; Set margin-left to 212px when sidebar is open
-} */
-
 .content-db-hide {
   padding: 7px;
   font-size: medium;
   flex: 1;
   position: absolute;
 }
+
 .content-db-show {
   padding: 7px;
   font-size: medium;

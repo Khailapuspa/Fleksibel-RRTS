@@ -21,6 +21,13 @@ const NavBar = () => {
     // setSidebarOpen(!sidebarOpen);
   }
 
+  const handleLogout = () => {
+    // Clear data from localStorage
+    localStorage.removeItem('data');
+    // Redirect to home page
+    window.location.href = '/home';
+  };
+
   // const navbarStyle = {
   //   backgroundColor: '#393c4d',
   //   marginLeft: sidebarOpen ? '15%' : '0', // Adjust the width as needed
@@ -40,7 +47,7 @@ const NavBar = () => {
             <InputText placeholder="Search" className="p-inputtext-sm" />
             <Button icon="pi pi-search" className="p-button-rounded p-button-text"></Button>
             <Button icon="pi pi-bell" className="p-button-rounded p-button-text"></Button>
-            <Avatar label="JW" icon="pi pi-user" shape="circle" className="p-mr-2 p-overlay-badge" />
+            <Nav.Link style={{ color: 'white', fontSize: '20px'}} onClick={handleLogout}>Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

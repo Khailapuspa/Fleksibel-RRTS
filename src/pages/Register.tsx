@@ -6,6 +6,7 @@
   import './../style/Register.css';
   import { userRegisAsync } from '../action/Auth';
   import { age, email, name, password } from '../features/auth/UserSlice';
+import { Navigate } from 'react-router-dom';
 
   const Register = () => {
     const dispatch = useAppDispatch();
@@ -18,7 +19,11 @@
   // const { name, age, email, password } = user;
 
   const registerHandle = () => {
-    dispatch(userRegisAsync({ name, age, email, password }));
+    dispatch(userRegisAsync({ name, age, email, password })).then((action) => {
+      if (action.payload.success == true ) {
+        window.location.href = '/login';
+      }
+    })
   };
 
     return (

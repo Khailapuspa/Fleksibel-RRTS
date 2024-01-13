@@ -1,21 +1,37 @@
 import { InputNumber } from "primereact/inputnumber";
 import { InputText } from "primereact/inputtext";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { Container, Card, Button } from "react-bootstrap";
 import { userRegisAsync } from "../action/Auth";
 import { useAppDispatch } from "../app/hooks";
 import { userLoginAsync } from "../action/AuthLog";
+import { usertokenAsync } from "../action/AuthValidate";
+
 
 const Login = () => {
+
   const dispatch = useAppDispatch();
-    // const user = useAppSelector(selectUser);
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-  // const { name, age, email, password } = user;
-
-  const loginHandle = () => {
-    dispatch(userLoginAsync({ email, password }));
+  const loginHandle = async () => {
+    // const tokenResponse = await dispatch(usertokenAsync());
+    // if (!tokenResponse.payload.success) {
+    //   alert("Token is not valid. Please login again.");
+    //     window.location.href = '/login';
+    // } else {
+      dispatch(userLoginAsync({ email, password })).then((action) => {
+        if (action.payload.success == true ) {
+          const token = action.payload.data.token
+          localStorage.setItem('data', token)
+          window.location.reload()
+          window.location.href = '/dashboard';
+        } else {
+          alert(action.payload.message)
+          console.log(action.payload.message)
+        }
+      })
+    // }
   };
   
     return (

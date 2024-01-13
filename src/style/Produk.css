@@ -1,36 +1,60 @@
-/* .ProdukIisi {
+.conti {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    height: 70vh;
-    margin-left: 12%;
-    background-color: beige;
-} */
-
-.card-produk {
-    /* background-color: beige; */
-    width: 200px; /* Sesuaikan lebar card sesuai kebutuhan */
-    height: 200px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    margin-left: 30px;
-    /* margin-top: 36px; */
-
-}
-
-.content {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-color: whitesmoke;
-    position: relative;
+  }
+  
+  .sidebar-p {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+    transition: width 0.5s ease;
+  }
+  
+  .content-p {
+    padding: 10px;
+    font-size: medium;
     flex: 1;
-    height: 480px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px (0, 0, 0, .3);
-    margin: 35px;
-    margin-left: 25%;
-}
+    position: absolute;
+    /* width: 100%; */
+    margin-right: 3px;
+    transition: width 0.5s ease;
+  }
+  
+  .content-p-hide {
+    padding: 7px;
+    font-size: medium;
+    flex: 1;
+    position: absolute;
+  }
+  
+  .content-p-show {
+    padding: 7px;
+    font-size: medium;
+    flex: 1;
+    position: absolute;
+    margin: 10px;
+  }
+  
+  .produk-p {
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    margin: 5px;
+  }
+  
+  div.produk-p:hover {
+    border: 1px solid #777;
+  }
+  
+  div.produk-p img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .desc-p {
+    padding: 15px;
+    text-align: center;
+  }

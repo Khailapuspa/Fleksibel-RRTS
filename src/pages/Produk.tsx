@@ -1,65 +1,62 @@
 import { Card, Container, Row } from "react-bootstrap";
 import HeadBar from "../components/HeadBar";
 import Sidebar from "../components/Sidebar";
+import NavBar from "../components/Navbar";
+import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { show, setShow } from "../features/sidebar/SidebarSlice";
+import { Image } from 'primereact/image';
 import './../style/Produk.css';
 import './../style/Dashboard.css';
-import NavBar from "../components/Navbar";
 
 const Produk = () => {
+
+    const dispatch = useAppDispatch();
+    const showValue = useAppSelector(show);
+
+    const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+
+    const setSideBar = () => {
+        const setsidebar = Boolean(!showValue)
+        dispatch(setShow(setsidebar));
+        setSidebarOpen(!sidebarOpen);
+    }
+
+    const contentStyle = {
+        marginLeft: showValue ? '0' : '212px',
+        transition: 'margin-left 0.3s ease',
+    };
+
     return (
         <>
         <NavBar />
-        <Sidebar />
-            {/* <Card className="card-produk">
-                <p>PRODUK NANTI DISINI </p>
-            </Card> */}
+            <div className="conti">
+                <div className="sidebar-p" style={{ width: showValue ? '0' : '212px', transition: 'width 0.3s ease' }} >
+                    <Sidebar />
+                </div>
+                <div className="content-p" style={contentStyle}>
+                    <h1>dashboard</h1>
+                    <div className="produk-p">
+                        <a href="/produk">
+                            <Image src="/produk1.jpeg" width="600" height="400" />
+                        </a>
+                        <div className="desc-p">Shampo</div>
+                    </div>
+                    <div className="produk-p">
+                        <a href="/produk">
+                            <Image src="/produk1.jpeg" width="600" height="400" />
+                        </a>
+                        <div className="desc-p">Shampo</div>
+                    </div>
+                    <div className="produk-p">
+                        <a href="/produk">
+                            <Image src="/produk1.jpeg" width="600" height="400" />
+                        </a>
+                        <div className="desc-p">Shampo</div>
+                    </div>
 
-        {/* <Container className="container-db">
-            <div className="card-db">
-            <Card className="card-produk">
-                <p>PRODUK NANTI DISINI </p>
-            </Card>
-            <Card className="card-produk">
-                <p>PRODUK NANTI DISINI </p>
-            </Card>
-            <Card className="card-produk">
-                <p>PRODUK NANTI DISINI </p>
-            </Card>
+                </div>
             </div>
-        </Container> */}
-
-            <div className="content">
-            <Row>
-            <Card className="card-produk">
-                <p>PRODUK 1 </p>
-            </Card>
-            <Card className="card-produk" style={{margin: '20px'}}>
-                <p>PRODUK 2 </p>
-            </Card>
-            <Card className="card-produk" style={{margin: '20px'}}>
-                <p>PRODUK 3 </p>
-            </Card>
-            <Card className="card-produk" style={{margin: '20px'}}>
-                <p>PRODUK 4 </p>
-            </Card>
-            </Row>
-
-            <Row>
-            <Card className="card-produk" style={{margin: '20px'}}>
-                <p>PRODUK 5 </p>
-            </Card>
-            <Card className="card-produk" style={{margin: '20px'}}>
-                <p>PRODUK 6 </p>
-            </Card>
-            <Card className="card-produk" style={{margin: '20px'}}>
-                <p>PRODUK 7 </p>
-            </Card>
-            <Card className="card-produk" style={{margin: '20px'}}>
-                <p>PRODUK 8 </p>
-            </Card>
-            </Row>
-            </div>
-
         </>
     );
 }
